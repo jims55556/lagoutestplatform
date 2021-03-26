@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{ message }}
+{% block title %}注册{% endblock %}
+{% block content %}
+    <div class="container">
+    <div class="col-md-4 col-md-offset-4">
+      <form class='form-login' action="/testplatform/register/" method="post">
+          <h2 class="text-center">欢迎注册</h2>
+          <div class="form-group">
+            <label for="id_username">用户名：</label>
+            <input type="text" name='username' class="form-control" id="id_username" placeholder="Username" autofocus required>
+          </div>
+          <div class="form-group">
+            <label for="id_password">密码：</label>
+            <input type="password" name='password' class="form-control" id="id_password" placeholder="Password" required>
+          </div>
+              <div class="form-group">
+            <label for="id_password">再次输入密码：</label>
+            <input type="password" name='password2' class="form-control" id="id_password2" placeholder="Password" required>
+          </div>
+          <button type="reset" class="btn btn-default pull-left">重置</button>
+          <button type="submit" class="btn btn-primary pull-right">注册</button>
+      </form>
+    </div>
+    </div>
+{% endblock %}
+</body>
+</html>

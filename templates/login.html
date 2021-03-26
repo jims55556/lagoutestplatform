@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="collapse navbar-collapse" id="my-nav">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/index/">主页</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/testplatform/register/">注册</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+          <form class='form-login' action="/testplatform/login/" method="post">
+              <h2 class="text-center">欢迎登录</h2>
+              <div class="form-group">
+                <label for="id_username">用户名：</label>
+                <input type="text" name='username' class="form-control" id="id_username" placeholder="Username" autofocus required>
+              </div>
+              <div class="form-group">
+                <label for="id_password">密码：</label>
+                <input type="password" name='password' class="form-control" id="id_password" placeholder="Password" required>
+              </div>
+              <button type="reset" class="btn btn-default pull-left">重置</button>
+              <button type="submit" class="btn btn-primary pull-right">提交</button>
+          </form>
+        </div>
+    </div> <!-- /container -->
+{% endblock %}
+</body>
+</html>
